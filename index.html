@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Js Heart Box | Make every moment special</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F9C6D6;--ink:#7A1235;--muted:#8A3A55;--card:#fff;--line:#EFA7BF;--coral:#A3173F;--gold:#FFC857;--violet:#6D0F2B;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Nunito",system-ui,sans-serif}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;line-height:1.08;margin:0}
+.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font:800 24px "Fraunces",serif}
+nav a{margin-left:20px;color:var(--ink);text-decoration:none;font-weight:600}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center;padding:30px 0 60px}
+.hero h1{font-size:clamp(40px,6.5vw,68px);font-weight:800}
+.hero p{color:var(--muted);max-width:46ch;margin:18px 0 28px}
+.btn{display:inline-block;background:var(--coral);color:#fff;padding:14px 28px;border-radius:999px;font:600 17px "Nunito",sans-serif;text-decoration:none;border:0;cursor:pointer}
+.btn.gold{background:var(--gold);color:#3B0A1E}
+.gift{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:34px 20px 24px;text-align:center;width:100%;color:var(--ink);cursor:pointer;font:inherit}
+.box{position:relative;width:170px;height:170px;margin:30px auto 16px}
+.base{position:absolute;bottom:0;left:0;right:0;height:110px;background:var(--violet);border-radius:10px}
+.base:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:26px;margin-left:-13px;background:var(--gold)}
+.lid{position:absolute;top:0;left:-10px;right:-10px;height:62px;background:var(--coral);border-radius:10px;transition:transform .5s cubic-bezier(.3,1.5,.5,1);transform-origin:left bottom}
+.lid:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:26px;margin-left:-13px;background:var(--gold)}
+.msg{position:absolute;left:0;right:0;top:40px;font:800 28px "Fraunces",serif;color:var(--coral);opacity:0;transition:opacity .4s .15s,transform .5s .15s}
+.gift.open .lid{transform:translate(-14px,-50px) rotate(-22deg)}
+.gift.open .msg{opacity:1;transform:translateY(-44px)}
+.gift small{color:var(--muted);font-size:16px}
+section{padding:50px 0}
+section h2{font-size:clamp(28px,4.2vw,40px);margin-bottom:26px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px}
+.card h3{font-size:22px;margin-bottom:8px}.card p{margin:0;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips span{background:var(--card);border:2px solid var(--line);border-radius:999px;padding:8px 18px;font-weight:600}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:s}
+.steps div{counter-increment:s}
+.steps div:before{content:counter(s);display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--gold);color:#3B0A1E;font:800 20px "Fraunces",serif;margin-bottom:10px}
+.steps h3{font-size:20px;margin-bottom:6px}.steps p{margin:0;color:var(--muted)}
+.contact{background:var(--violet);color:#fff;border-radius:30px;padding:46px 32px;text-align:center;margin:30px 0 50px}
+.contact h2{margin-bottom:12px}.contact p{margin:0 auto 24px;max-width:44ch;color:#FBD9E4}
+footer{text-align:center;color:var(--muted);padding:10px 0 40px;font-size:15px}
+@media(max-width:760px){.hero,.grid,.steps{grid-template-columns:1fr}nav a:not(.keep){display:none}}
+.view{display:none}.view.on{display:block}
+.logo{color:var(--ink);text-decoration:none}
+.chips a{background:var(--card);border:2px solid var(--line);border-radius:999px;padding:8px 18px;font-weight:600;color:var(--ink);text-decoration:none}
+.chips a:hover{border-color:var(--coral)}
+.back{display:inline-block;margin:6px 0 16px;color:var(--ink);font-weight:600}
+.sub{color:var(--muted);max-width:50ch;margin:-12px 0 24px}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
+.pic{width:100%;border-radius:18px;display:block}
+.soon{border:2px dashed var(--line);border-radius:22px;padding:60px 20px;text-align:center;color:var(--muted);margin-bottom:24px}
+@media(max-width:760px){.gal{grid-template-columns:repeat(2,1fr)}}
+.plist{margin-bottom:30px}
+.ph{font-size:26px;margin-bottom:10px}
+.pk{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.pk .card{padding:22px}
+.pk h4{font:800 28px "Fraunces",serif;color:var(--coral);margin:0 0 2px}
+.pk .pn{font-weight:600;color:var(--ink);margin:0 0 10px}
+.pk .card p{margin:0 0 8px;color:var(--ink);font-size:16px;line-height:1.5}
+.pk .wide{grid-column:1/-1}
+@media(max-width:760px){.pk{grid-template-columns:1fr}}
+#confetti{position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:50}
+.btn.snap{background:#fff;color:#6D0F2B;margin:8px 0 0 10px}
+@media(prefers-reduced-motion:reduce){.lid,.msg{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><a class="logo" href="#home" data-go="home">Js Heart Box</a><nav><a href="#services">What we do</a><a href="#how">How it works</a><a class="keep" href="#contact">Order</a></nav></header>
+
+<main><div class="view on" id="v-home">
+<div class="hero">
+<div>
+<h1 id="headline">Make every moment special.</h1>
+<p id="intro">We pick the gifts, plan the surprise and deliver it with a smile. Tell us who it is for, and we do the rest.</p>
+<a class="btn" href="#occasions">Plan a surprise</a>
+</div>
+<button class="gift" id="gift" aria-pressed="false" aria-label="Open the gift box">
+<div class="box"><div class="base"></div><div class="lid"></div><div class="msg">Surprise!</div></div>
+<small>Tap the box to open it</small>
+</button>
+</div>
+
+<section id="services">
+<h2>What we do</h2>
+<div class="grid">
+<div class="card"><h3>Curated gift boxes</h3><p>Hand-picked gifts put together in one beautiful box, ready to give.</p></div>
+<div class="card"><h3>Surprise delivery</h3><p>We deliver to their door or workplace, and keep the secret until the big moment.</p></div>
+<div class="card"><h3>Custom gifts</h3><p>Tell us the person, the budget and the occasion, and we choose gifts they will love.</p></div>
+</div>
+</section>
+
+<section id="occasions">
+<h2>For every occasion</h2>
+<div class="chips" id="chips"></div>
+</section>
+
+<section id="how">
+<h2>How it works</h2>
+<div class="steps">
+<div><h3>Tell us about them</h3><p>Who it is for, what they like, your budget and the date.</p></div>
+<div><h3>We plan the surprise</h3><p>We choose the gifts and send you the plan to approve.</p></div>
+<div><h3>We deliver the joy</h3><p>Your gift arrives wrapped, on time, and ready to impress.</p></div>
+</div>
+</section>
+
+</div>
+<div id="pages"></div></main>
+
+<div class="contact" id="contact">
+<h2>Ready to surprise someone?</h2>
+<p>Message us the occasion, the date and your budget. We will reply with ideas and prices.</p>
+<a class="btn gold" id="wa" href="https://wa.me/2348101554013?text=Hello%2C%20I%20want%20to%20plan%20a%20surprise">Chat on WhatsApp</a>
+<a class="btn snap" id="snap" href="https://www.snapchat.com/add/girlikejaycee" target="_blank" rel="noopener">Add us on Snapchat</a>
+<p id="contactline" style="margin:22px auto 0">Phone: 0810 155 4013 &nbsp;|&nbsp; Snapchat: girlikejaycee</p>
+</div>
+
+<footer>&copy; 2026 Js Heart Box. All rights reserved.</footer>
+</div>
+<script>
+var g=document.getElementById('gift');
+g.addEventListener('click',function(){var o=g.classList.toggle('open');g.setAttribute('aria-pressed',o)});
+
+var X={"period-care":"<div class=\"plist\"><h3 class=\"ph\">Period care price list</h3><p class=\"sub\">Gifts can be curated according to budget and preference. Packages can be adjusted to preference.</p><div class=\"pk\"><div class=\"card\"><h4>\u20a635,000</h4><p class=\"pn\">35K Package &middot; A gift bag containing</p><p><b>Essentials:</b> 4 packs of sanitary pads, 1 pack of panty liners</p><p><b>Comfort snacks:</b> Chocolates and cookies</p><p><b>Skin and beauty care:</b> Wet wipes, Sheet mask, Under eye mask, Lip mask</p><p>Love note</p></div><div class=\"card\"><h4>\u20a665,000</h4><p class=\"pn\">65K Package &middot; A gift box containing</p><p><b>Essentials:</b> 4 packs of sanitary pads, 1 pack of panty liners, Menstrual relief belt</p><p><b>Comfort snacks:</b> Chocolates and cookies</p><p><b>Skin and beauty care:</b> Sheet mask, Under eye mask, Lip mask, Lip oil, Wet wipes</p><p>Love note</p></div><div class=\"card\"><h4>\u20a695,000</h4><p class=\"pn\">95K Package &middot; A gift box containing</p><p><b>Essentials:</b> 4 packs of sanitary pads, 1 pack of panty liners, Menstrual relief belt</p><p><b>Comfort snacks:</b> Chocolates, Cookies, Wafers, Fruit drink</p><p><b>Skin &amp; beauty care:</b> Sheet mask, Under eye mask, Lip mask, Lip scrub, Lip gloss, Wet wipes</p><p><b>Cozy comfort:</b> Silk pajamas, Water bottle</p><p>Love note</p></div><div class=\"card\"><h4>\u20a6125,000</h4><p class=\"pn\">125K Package</p><p><b>Essentials:</b> 4 packs of sanitary pads, 1 pack of panty liners, Menstrual relief belt, Water bottle</p><p><b>Comfort snacks:</b> Chocolates, Wafers, Cookies, Fruit drink</p><p><b>Skin &amp; beauty care:</b> Sheet mask, Under eye mask, Lip mask, Lip oil, Lip balm, Lip gloss, Wet wipes, Body mist</p><p><b>Cozy comfort:</b> Cotton pajamas, Scented candle</p><p>Relaxation playlist card with a love note</p></div><div class=\"card\"><h4>\u20a6155,000</h4><p class=\"pn\">155K Package &middot; A gift box containing</p><p><b>Essentials:</b> \u20a650,000 cash gift, 4 packs of sanitary pads, 1 pack of panty liners, Menstrual relief belt</p><p><b>Comfort snacks:</b> Chocolates, Wafers, Cookies, Fruit drink</p><p><b>Skin &amp; beauty care:</b> Sheet mask, Under eye mask, Lip mask, Lip scrub, Lip gloss, Wet wipes, Body mist</p><p><b>Cozy comfort:</b> Cotton pajamas, Scented candle</p><p>Relaxation playlist card / love note</p></div><div class=\"card\"><h4>\u20a6200,000</h4><p class=\"pn\">200K Package</p><p><b>Essentials:</b> \u20a650,000 cash gift, 4 packs of sanitary pads, 1 pack of panty liners, Menstrual relief belt</p><p><b>Comfort snacks:</b> Chocolates, Wafers, Canned drink, Hot chocolate tea, Cookies, Fruit drink</p><p><b>Skin &amp; beauty care:</b> Sheet mask, Under eye mask, Lip mask, Lip scrub, Combo lip gloss, Wet wipes, Shaving cream, Mini perfume or body mist</p><p><b>Cozy comfort:</b> Pajamas, Scented candle</p><p>Guided affirmation cards, Relaxation playlist card</p></div><div class=\"card wide\"><h4>Add-ons / extras</h4><p><b>Romantic &amp; surprise:</b> Money box / Money bouquet, Balloon treat box, Flower bouquet</p><p><b>Cozy comfort:</b> Cozy slippers, Mini teddy, Blankets, Cozy socks</p><p><b>Accessories &amp; beauty:</b> Hair care set (scrunchies, hair clips, hair bands), Jewelry, Keychains, Small purse, Body scrub, Cream, Bar soap, Exfoliating gloves, Face towel, Facial cleanser &amp; cotton pads, Sunscreen, Diffuser, Mini deodorant</p><p><b>Snacks &amp; treats:</b> Mini cake, Cupcakes, Food tray</p><p><b>Drinks &amp; teas:</b> Green tea, Ginger tea, Lemon tea, Milo, Mug</p><p><b>Practical &amp; emotional:</b> \u201cReasons You\u2019re Loved\u201d cards</p></div></div></div>"};
+var SITE={};
+function esc(t){return String(t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function slug(n){return String(n).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')}
+function wa(t){return 'https://wa.me/'+SITE.whatsapp+(t?'?text='+encodeURIComponent(t):'')}
+function build(site,occ){
+SITE=site;
+document.getElementById('headline').textContent=site.headline;
+document.getElementById('intro').textContent=site.intro;
+document.getElementById('wa').href=wa('Hello, I want to plan a surprise');
+document.getElementById('snap').href='https://www.snapchat.com/add/'+encodeURIComponent(site.snapchat);
+document.getElementById('contactline').textContent='Phone: '+site.phone+'  |  Snapchat: '+site.snapchat;
+var ch=document.getElementById('chips'),pg=document.getElementById('pages');
+ch.innerHTML='';pg.innerHTML='';
+(occ.items||[]).forEach(function(o){
+var s=slug(o.name);
+ch.insertAdjacentHTML('beforeend','<a href="#'+s+'" data-go="'+s+'">'+esc(o.name)+'</a>');
+var im=(o.images||[]).map(function(x){return '<img class="pic" src="'+esc(x)+'" alt="'+esc(o.name)+'" loading="lazy">'}).join('');
+pg.insertAdjacentHTML('beforeend','<div class="view" id="v-'+s+'"><section><a class="back" href="#home" data-go="home">Back to home</a><h2>'+esc(o.name)+'</h2><p class="sub">'+esc(o.blurb||'')+'</p>'+(X[s]||'')+(im?'<div class="gal">'+im+'</div>':'<div class="soon">Pictures coming soon</div>')+'<p><a class="btn" href="'+wa('Hello, I want to order: '+o.name)+'">Order '+esc(o.name)+'</a></p></section></div>');
+});
+show(location.hash.slice(1)||'home');
+}
+Promise.all([fetch('data/site.json').then(function(r){return r.json()}),fetch('data/occasions.json').then(function(r){return r.json()})]).then(function(a){build(a[0],a[1])}).catch(function(){document.getElementById('chips').textContent='Could not load the page content. Please reload.'});
+function show(v){if(!document.getElementById('v-'+v))return;
+[].forEach.call(document.querySelectorAll('.view'),function(x){x.classList.toggle('on',x.id=='v-'+v)});window.scrollTo(0,0)}
+document.addEventListener('click',function(e){var a=e.target.closest('a[href^="#"]');if(!a)return;var id=a.getAttribute('href').slice(1);
+if(document.getElementById('v-'+id)){show(id)}else if(document.getElementById('v-home').contains(document.getElementById(id))){show('home')}});
+window.addEventListener('hashchange',function(){show(location.hash.slice(1)||'home')});
+function confetti(ms){
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+var c=document.createElement('canvas');c.id='confetti';document.body.appendChild(c);
+var x=c.getContext('2d'),W,H,dpr=Math.min(window.devicePixelRatio||1,2);
+W=innerWidth;H=innerHeight;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);
+var cols=['#A3173F','#FFC857','#F9C6D6','#6D0F2B','#FF8FAB','#FFFFFF'],ps=[],t0=performance.now(),last=t0;
+function add(n){for(var i=0;i<n;i++)ps.push({x:Math.random()*W,y:-20-Math.random()*H*0.3,w:6+Math.random()*7,h:10+Math.random()*8,r:Math.random()*6.3,vr:(Math.random()-.5)*.25,vy:2+Math.random()*3,vx:(Math.random()-.5)*1.5,c:cols[Math.random()*cols.length|0],ph:Math.random()*6.3})}
+add(90);
+function tick(now){var el=now-t0;x.clearRect(0,0,W,H);
+if(el<ms&&now-last>120){add(10);last=now}
+for(var i=ps.length-1;i>=0;i--){var p=ps[i];p.y+=p.vy;p.x+=p.vx+Math.sin(p.ph+p.y/40)*.8;p.r+=p.vr;
+if(p.y>H+30){ps.splice(i,1);continue}
+x.save();x.translate(p.x,p.y);x.rotate(p.r);x.fillStyle=p.c;x.fillRect(-p.w/2,-p.h/2,p.w,p.h);x.restore()}
+if(el<ms||ps.length)requestAnimationFrame(tick);else c.remove()}
+requestAnimationFrame(tick)}
+confetti(3500);
+g.addEventListener('click',function(){if(g.classList.contains('open'))confetti(1800)});
+</script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+if(window.netlifyIdentity){window.netlifyIdentity.on("init",function(user){if(!user){window.netlifyIdentity.on("login",function(){document.location.href="/admin/"})}})}
+</script>
+</body>
+</html>

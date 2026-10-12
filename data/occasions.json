@@ -1,0 +1,138 @@
+{
+  "items": [
+    {
+      "name": "Birthdays",
+      "blurb": "Surprises that make their birthday one to remember.",
+      "images": [
+        "/images/birthdays-1.jpg",
+        "/images/birthdays-2.jpg",
+        "/images/birthdays-3.jpg",
+        "/images/birthdays-4.jpg"
+      ]
+    },
+    {
+      "name": "Anniversaries",
+      "blurb": "Romantic gifts and surprises to celebrate your years together.",
+      "images": [
+        "/images/anniversaries-1.jpg",
+        "/images/anniversaries-2.jpg",
+        "/images/anniversaries-3.jpg"
+      ]
+    },
+    {
+      "name": "Proposals",
+      "blurb": "Plan the perfect moment, with decorations and gifts to say it all.",
+      "images": [
+        "/images/proposals-1.jpg"
+      ]
+    },
+    {
+      "name": "Graduations",
+      "blurb": "Celebrate the big achievement with a gift they will keep.",
+      "images": [
+        "/images/graduations-1.jpg",
+        "/images/graduations-2.jpg",
+        "/images/graduations-3.jpg",
+        "/images/graduations-4.jpg"
+      ]
+    },
+    {
+      "name": "New baby",
+      "blurb": "Welcome the little one with thoughtful gifts for baby and parents.",
+      "images": []
+    },
+    {
+      "name": "Apology",
+      "blurb": "Say sorry in a sweet way, with a gift that comes from the heart.",
+      "images": [
+        "/images/apology-1.jpg"
+      ]
+    },
+    {
+      "name": "Just because",
+      "blurb": "No reason needed. Make someone smile today.",
+      "images": [
+        "/images/just-because-1.jpg",
+        "/images/just-because-2.jpg",
+        "/images/just-because-3.jpg",
+        "/images/just-because-4.jpg"
+      ]
+    },
+    {
+      "name": "Valentine's",
+      "blurb": "Gifts and surprises for the one you love.",
+      "images": [
+        "/images/valentines-1.jpg",
+        "/images/valentines-2.jpg",
+        "/images/valentines-3.jpg",
+        "/images/valentines-4.jpg"
+      ]
+    },
+    {
+      "name": "Period care",
+      "blurb": "Thoughtful care packages to comfort her during her period.",
+      "images": [
+        "/images/period-care-1.jpg"
+      ]
+    },
+    {
+      "name": "Memory boxes",
+      "blurb": "Keep your best moments safe in a box made just for you.",
+      "images": [
+        "/images/memory-boxes-1.jpg",
+        "/images/memory-boxes-2.jpg",
+        "/images/memory-boxes-3.jpg"
+      ]
+    },
+    {
+      "name": "Love letter boxes",
+      "blurb": "Words from the heart, beautifully packed and delivered.",
+      "images": [
+        "/images/love-letter-boxes-1.jpg",
+        "/images/love-letter-boxes-2.jpg",
+        "/images/love-letter-boxes-3.jpg",
+        "/images/love-letter-boxes-4.jpg"
+      ]
+    },
+    {
+      "name": "Room decorations",
+      "blurb": "Balloons, lights and decor to turn a room into a surprise.",
+      "images": [
+        "/images/room-decorations-1.jpg",
+        "/images/room-decorations-2.jpg",
+        "/images/room-decorations-3.jpg",
+        "/images/room-decorations-4.jpg"
+      ]
+    },
+    {
+      "name": "Money bouquets",
+      "blurb": "Cash folded into a beautiful bouquet. A gift they will love to open.",
+      "images": [
+        "/images/money-bouquets-1.jpg",
+        "/images/money-bouquets-2.jpg",
+        "/images/money-bouquets-3.jpg",
+        "/images/money-bouquets-4.jpg",
+        "/images/money-bouquets-5.jpg",
+        "/images/money-bouquets-6.jpg",
+        "/images/money-bouquets-7.jpg",
+        "/images/money-bouquets-8.jpg",
+        "/images/money-bouquets-9.jpg",
+        "/images/money-bouquets-10.jpg"
+      ]
+    },
+    {
+      "name": "Flower bouquets",
+      "blurb": "Fresh, hand-tied flower bouquets for any moment.",
+      "images": [
+        "/images/flower-bouquets-1.jpg",
+        "/images/flower-bouquets-2.jpg",
+        "/images/flower-bouquets-3.jpg"
+      ]
+    },
+    {
+      "name": "Gift boxes",
+      "blurb": "Hand-picked gifts put together in one beautiful box.",
+      "images": []
+    }
+  ]
+}

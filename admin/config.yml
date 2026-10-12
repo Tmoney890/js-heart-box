@@ -1,0 +1,37 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "website"
+    label: "Website"
+    files:
+      - label: "Main text and contact"
+        name: "site"
+        file: "data/site.json"
+        fields:
+          - {label: "Main headline", name: "headline", widget: "string"}
+          - {label: "Short intro", name: "intro", widget: "text"}
+          - {label: "WhatsApp number", name: "whatsapp", widget: "string", hint: "Digits only, starting with 234. Example: 2348101554013"}
+          - {label: "Phone shown on the page", name: "phone", widget: "string"}
+          - {label: "Snapchat username", name: "snapchat", widget: "string"}
+      - label: "Occasion pages and pictures"
+        name: "occasions"
+        file: "data/occasions.json"
+        fields:
+          - label: "Occasions"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Short description", name: "blurb", widget: "text"}
+              - label: "Pictures"
+                name: "images"
+                widget: "list"
+                required: false
+                hint: "Use small pictures. Send each picture to yourself on WhatsApp first so it gets smaller before you add it here."
+                field: {label: "Picture", name: "image", widget: "image"}
